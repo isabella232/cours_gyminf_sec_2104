@@ -40,8 +40,8 @@ class Scalar:
     def hex(self) -> str:
         return bytes(self.value).hex()
 
-    def print(self):
-        print("Scalar value is:", bytes(self.value).hex())
+    def __print__(self):
+        print("Ed25519Scalar(", bytes(self.value).hex(),")")
     
 
 class Point:
@@ -83,6 +83,9 @@ class Point:
     
     def hex(self) -> str:
         return bytes(self.value).hex()
+    
+    def __print__(self):
+        print("Ed25519Point(", bytes(self.value).hex(), ")")
     
     # The following methods, set_int and get_int, are specially used here for the homomorphic tests.
     
